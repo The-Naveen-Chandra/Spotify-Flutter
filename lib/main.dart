@@ -43,7 +43,28 @@ class MyApp extends StatelessWidget {
           ),
         ),
       ),
-      home: Scaffold(),
+      home: Shell(),
+    );
+  }
+}
+
+
+// shell 
+class Shell extends StatelessWidget {
+  const Shell({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Expanded(
+            child: Row(
+              
+            )
+          ),
+        ],
+      ),
     );
   }
 }
