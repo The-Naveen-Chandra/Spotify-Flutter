@@ -1,6 +1,14 @@
+import 'dart:io';
+import 'package:desktop_window/desktop_window.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_ui/widgets/side_menu.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  if(!kIsWeb && (Platform.isMacOS || Platform.isLinux || Platform.isWindows)) {
+    await DesktopWindow.setMinWindowSize(const Size(600, 800));
+  }
   runApp(MyApp());
 }
 
@@ -61,10 +69,9 @@ class Shell extends StatelessWidget {
           Expanded(
             child: Row(
               children: [
-                Container(
-                  width: 200.0,
-                  color: Colors.blue,
-                ),
+
+                // side menu
+                SideMenu(),
 
                 // playlist screen
 
@@ -72,10 +79,11 @@ class Shell extends StatelessWidget {
             )
           ),
 
+          //  bottom playlist
           Container(
             height: 84.0,
             width: double.infinity,
-            color: Colors.green,
+            color: Colors.blue,
           ),
         ],
       ),
