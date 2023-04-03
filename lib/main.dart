@@ -60,8 +60,22 @@ class Shell extends StatelessWidget {
         children: [
           Expanded(
             child: Row(
-              
+              children: [
+                Container(
+                  width: 200.0,
+                  color: Colors.blue,
+                ),
+
+                // playlist screen
+
+              ],
             )
+          ),
+
+          Container(
+            height: 84.0,
+            width: double.infinity,
+            color: Colors.green,
           ),
         ],
       ),
