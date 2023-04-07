@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:desktop_window/desktop_window.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_ui/widgets/side_menu.dart';
+import 'package:spotify_ui/widgets/widgets.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +68,7 @@ class Shell extends StatelessWidget {
         children: [
           Expanded(
             child: Row(
-              children: [
+              children: const [
 
                 // side menu
                 SideMenu(),
