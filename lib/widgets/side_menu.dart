@@ -34,10 +34,14 @@ class SideMenu extends StatelessWidget {
             onTap: () {},
           ),
           _SideMenuIconTab(
-            iconData: Icons.home_filled,
-            title: 'Home',
+            iconData: Icons.book_outlined,
+            title: 'Library',
             onTap: () {},
           ),
+
+          const SizedBox(height: 12.0,),
+
+          _LibraryPlaylist(),
         ],
       ),
     );
@@ -71,5 +75,14 @@ class _SideMenuIconTab extends StatelessWidget {
       ),
       onTap: onTap,
     );
+  }
+}
+
+class _LibraryPlaylist extends StatelessWidget {
+  const _LibraryPlaylist({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
