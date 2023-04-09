@@ -104,14 +104,16 @@ class __LibraryPlaylistState extends State<_LibraryPlaylist> {
                 overflow: TextOverflow.ellipsis,
               ),
             ),
-            ...yourLibrary.map((e) => ListTile(
-                  dense: true,
-                  title: 
+            ...yourLibrary.map((e) => 
+              ListTile(
+                dense: true,
+                title: 
                   Text(
-                    e,
-                    style: Theme.of(context).textTheme.bodyMedium,
-                  ),
-                ))
+                  e,
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+              ),
+            ).toList(),
           ],
         ),
       ],
