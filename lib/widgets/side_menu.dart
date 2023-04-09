@@ -35,8 +35,8 @@ class SideMenu extends StatelessWidget {
             onTap: () {},
           ),
           _SideMenuIconTab(
-            iconData: Icons.book_outlined,
-            title: 'Library',
+            iconData: Icons.audiotrack_outlined,
+            title: 'Radio',
             onTap: () {},
           ),
           const SizedBox(
