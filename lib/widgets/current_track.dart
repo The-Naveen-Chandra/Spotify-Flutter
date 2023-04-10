@@ -14,20 +14,21 @@ class CurrentTrack extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(12.0),
         child: Row(
-          children: const [
+          children: [
 
             // track info
-            _TrackInfo(),
+            const _TrackInfo(),
 
-            Spacer(),
+            const Spacer(),
 
             // Player Controls
-            _PlayerControls(),
+            const _PlayerControls(),
             
-            Spacer(),
+            const Spacer(),
 
             // More Controls
-            _MoreControls(),
+            if(MediaQuery.of(context).size.width > 800) const _MoreControls(),
+
           ],
         ),
       ),
@@ -111,22 +112,28 @@ class _PlayerControls extends StatelessWidget {
             ),
             IconButton(
               padding: const EdgeInsets.only(),
-              iconSize: 30.0 ,  
+              iconSize: 32.0 ,  
               onPressed: () {},
-              color: Colors.grey.shade400,
+              color: Colors.grey.shade500,
               icon: const Icon(Icons.skip_previous_sharp), 
             ),
+
+            const SizedBox(width: 10.0,),
+
             IconButton(
               padding: const EdgeInsets.only(),
               iconSize: 40.0 ,  
               onPressed: () {},
               icon: const Icon(Icons.play_circle_fill_sharp), 
             ),
+
+            const SizedBox(width: 10.0,),
+
             IconButton(
               padding: const EdgeInsets.only(),
-              iconSize: 30.0 ,  
+              iconSize: 32.0 ,  
               onPressed: () {},
-              color: Colors.grey.shade400,
+              color: Colors.grey.shade500,
               icon: const Icon(Icons.skip_next_sharp), 
             ),
             IconButton(
@@ -134,7 +141,7 @@ class _PlayerControls extends StatelessWidget {
               iconSize: 22.0 ,  
               onPressed: () {},
               color: Colors.grey.shade700,
-              icon: const Icon(Icons.repeat_sharp), 
+              icon: const Icon(Icons.repeat_rounded), 
             ),
           ],
         ),
@@ -171,6 +178,51 @@ class _MoreControls extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        IconButton(
+          onPressed: () {}, 
+          icon: const Icon(Icons.lyrics_outlined),
+          iconSize: 20.0,
+          color: Colors.grey.shade500,
+        ),
+        IconButton(
+          onPressed: () {}, 
+          icon: const Icon(Icons.queue_music_rounded),
+          iconSize: 20.0,
+          color: Colors.grey.shade500,
+        ),
+        IconButton(
+          onPressed: () {}, 
+          icon: const Icon(Icons.devices_sharp),
+          iconSize: 20.0,
+          color: Colors.grey.shade500,
+        ),
+        Row(
+          children: [
+            IconButton(
+              onPressed: () {}, 
+              icon: const Icon(Icons.volume_up_rounded),
+              iconSize: 20.0,
+              color: Colors.grey.shade500,
+            ),
+            Container(
+              height: 5.0,
+              width: 70.0,
+              decoration: BoxDecoration(
+                color: Colors.grey[800],
+                borderRadius: BorderRadius.circular(2.5),
+              ),
+            )
+          ],
+        ),
+        IconButton(
+          onPressed: () {}, 
+          icon: const Icon(Icons.open_in_full_rounded),
+          iconSize: 20.0,
+          color: Colors.grey.shade500,
+        ),
+      ],
+    );
   }
 }
