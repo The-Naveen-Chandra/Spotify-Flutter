@@ -42,6 +42,8 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+
+              // left
               InkWell(
                 customBorder: const CircleBorder(),
                 onTap: () {},
@@ -57,6 +59,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               
               const SizedBox(width: 14.0),
 
+              // right
               InkWell(
                 customBorder: const CircleBorder(),
                 onTap: () {},
