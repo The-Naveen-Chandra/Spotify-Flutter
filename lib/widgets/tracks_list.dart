@@ -16,6 +16,8 @@ class TracksList extends StatelessWidget {
       ], 
       rows: tracks.map((e) {
         return DataRow(cells: [
+
+          // title
           DataCell(
             Text(
               e.title,
@@ -24,6 +26,8 @@ class TracksList extends StatelessWidget {
               ),
             ),
           ),
+
+          // artist
           DataCell(
             Text(
               e.artist,
@@ -32,6 +36,8 @@ class TracksList extends StatelessWidget {
               ),
             ),
           ),
+
+          // album
           DataCell(
             Text(
               e.album,
@@ -40,6 +46,8 @@ class TracksList extends StatelessWidget {
               ),
             ),
           ),
+
+          // duration
           DataCell(
             Text(
               e.duration,
