@@ -15,11 +15,11 @@ class TracksList extends StatelessWidget {
       // remove the box
       showCheckboxColumn: false,
 
-      columns: const [
-        DataColumn(label: Text('TITLE')),
-        DataColumn(label: Text('ARTIST')),
-        DataColumn(label: Text('ALBUM')),
-        DataColumn(label: Icon(Icons.access_time)),
+      columns: [
+        DataColumn(label: Text('Title', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.grey.shade400),)),
+        DataColumn(label: Text('Artist', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.grey.shade400),)),
+        DataColumn(label: Text('Album', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14, color: Colors.grey.shade400),)),
+        DataColumn(label: Icon(Icons.access_time, color: Colors.grey.shade400,)),
       ], 
       rows: tracks.map((e) {
         final selected = context.watch<CurrentTrackModel>().selected?.id == e.id;

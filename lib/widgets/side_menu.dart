@@ -8,7 +8,7 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      width: 240.0,
+      width: 220.0,
       color: Theme.of(context).primaryColor,
       child: Column(
         children: [
@@ -25,7 +25,7 @@ class SideMenu extends StatelessWidget {
           //   ],
           // ),
           _SideMenuIconTab(
-            iconData: Icons.home_filled,
+            iconData: Icons.home_outlined,
             title: 'Home',
             onTap: () {},
           ),
@@ -40,8 +40,23 @@ class SideMenu extends StatelessWidget {
             onTap: () {},
           ),
           const SizedBox(
-            height: 12.0,
+            height: 24.0,
           ),
+
+          _SideMenuIconTab(
+            iconData: Icons.add_box, 
+            title: 'Create Playlist', 
+            onTap: () {},
+          ),
+          _SideMenuIconTab(
+            iconData: Icons.favorite_outlined, 
+            title: 'Liked Song', 
+            onTap: () {},
+          ),
+
+
+          
+
           _LibraryPlaylist(),
         ],
       ),

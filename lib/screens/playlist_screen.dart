@@ -48,7 +48,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(6.0),
                   decoration: const BoxDecoration(
-                    color: Colors.black26,
+                    color: Colors.black54,
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(Icons.chevron_left_rounded, size: 28.0,),
@@ -63,7 +63,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
                 child: Container(
                   padding: const EdgeInsets.all(6.0),
                   decoration: const BoxDecoration(
-                    color: Colors.black26,
+                    color: Colors.black54,
                     shape: BoxShape.circle,
                   ),
                   child: const Icon(Icons.chevron_right_rounded, size: 28.0,),
@@ -99,6 +99,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
 
         ],
       ),
+
       body: Container(
         width: double.infinity,
         decoration: BoxDecoration(
@@ -106,10 +107,11 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              const Color(0xFFAF1018),
+              const Color(0xFFb01c2c),
+              // const Color(0xFFAF1018),
               Theme.of(context).backgroundColor,
             ],
-            stops: const  [0,0.3],
+            stops: const  [0,0.6],
           ),
         ),
         child: Scrollbar(
@@ -123,9 +125,12 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
             ),
             children: [
 
+              SizedBox(height: 30.0,),
+
               // Playlist Header
               PlaylistHeader(playlist: widget.playlist),
               
+              SizedBox(height: 24.0,),
               // Track List
               TracksList(tracks: widget.playlist.songs),
             ],

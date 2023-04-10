@@ -80,11 +80,13 @@ class _PlaylistButtons extends StatelessWidget {
           icon: const Icon(Icons.favorite_border),
           iconSize: 30.0,
         ),
+        const SizedBox(width: 8.0,),
         IconButton(
           onPressed: () {}, 
           icon: const Icon(Icons.arrow_circle_down_rounded),
           iconSize: 35.0,
         ),
+        const SizedBox(width: 8.0,),
         IconButton(
           onPressed: () {}, 
           icon: const Icon(Icons.more_horiz),
