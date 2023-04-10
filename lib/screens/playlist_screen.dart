@@ -127,7 +127,7 @@ class _PlaylistScreenState extends State<PlaylistScreen> {
               PlaylistHeader(playlist: widget.playlist),
               
               // Track List
-              TrackList(tracks: widget.playlist.songs),
+              TracksList(tracks: widget.playlist.songs),
             ],
           ),
         ),

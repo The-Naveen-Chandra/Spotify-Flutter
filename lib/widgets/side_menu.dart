@@ -91,7 +91,8 @@ class __LibraryPlaylistState extends State<_LibraryPlaylist> {
   ScrollController? _scrollController;
 
   @override
-  void initstate() {
+  void initState() {
+    // TODO: implement initState
     super.initState();
     _scrollController = ScrollController();
   }
@@ -99,8 +100,8 @@ class __LibraryPlaylistState extends State<_LibraryPlaylist> {
   @override
   void dispose() {
     // TODO: implement dispose
-    _scrollController?.dispose();
     super.dispose();
+    _scrollController?.dispose();
   }
  
   @override
