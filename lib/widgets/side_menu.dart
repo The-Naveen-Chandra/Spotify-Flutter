@@ -8,22 +8,22 @@ class SideMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: double.infinity,
-      width: 280.0,
+      width: 240.0,
       color: Theme.of(context).primaryColor,
       child: Column(
         children: [
-          Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(16.0),
-                child: Image.asset(
-                  'assets/images/spotify_logo.png',
-                  height: 45.0,
-                  filterQuality: FilterQuality.high,
-                ),
-              ),
-            ],
-          ),
+          // Row(
+          //   children: [
+          //     Padding(
+          //       padding: const EdgeInsets.all(16.0),
+          //       child: Image.asset(
+          //         'assets/images/spotify_logo.png',
+          //         height: 45.0,
+          //         filterQuality: FilterQuality.high,
+          //       ),
+          //     ),
+          //   ],
+          // ),
           _SideMenuIconTab(
             iconData: Icons.home_filled,
             title: 'Home',

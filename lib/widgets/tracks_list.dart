@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:spotify_ui/data/data.dart';
+import 'package:spotify_ui/models/current_track_model.dart';
 
 class TracksList extends StatelessWidget {
   final List<Song> tracks;
@@ -8,6 +10,11 @@ class TracksList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DataTable(
+      headingTextStyle: Theme.of(context).textTheme.overline!.copyWith(fontSize: 12.0),
+      dataRowHeight: 50.0,
+      // remove the box
+      showCheckboxColumn: false,
+
       columns: const [
         DataColumn(label: Text('TITLE')),
         DataColumn(label: Text('ARTIST')),
@@ -15,15 +22,15 @@ class TracksList extends StatelessWidget {
         DataColumn(label: Icon(Icons.access_time)),
       ], 
       rows: tracks.map((e) {
+        final selected = context.watch<CurrentTrackModel>().selected?.id == e.id;
+        final textStyle = TextStyle(color: selected ? Theme.of(context).accentColor : Theme.of(context).iconTheme.color);
         return DataRow(cells: [
 
           // title
           DataCell(
             Text(
               e.title,
-              style: TextStyle(
-                color: Theme.of(context).iconTheme.color,
-              ),
+              style: textStyle,
             ),
           ),
 
@@ -31,9 +38,7 @@ class TracksList extends StatelessWidget {
           DataCell(
             Text(
               e.artist,
-              style: TextStyle(
-                color: Theme.of(context).iconTheme.color,
-              ),
+              style: textStyle,
             ),
           ),
 
@@ -41,9 +46,7 @@ class TracksList extends StatelessWidget {
           DataCell(
             Text(
               e.album,
-              style: TextStyle(
-                color: Theme.of(context).iconTheme.color,
-              ),
+              style: textStyle,
             ),
           ),
 
@@ -51,12 +54,13 @@ class TracksList extends StatelessWidget {
           DataCell(
             Text(
               e.duration,
-              style: TextStyle(
-                color: Theme.of(context).iconTheme.color,
-              ),
+              style: textStyle,
             ),
           ),
-        ]);
+        ],
+        selected: selected,
+        onSelectChanged: (_) => context.read<CurrentTrackModel>().selectTrack(e),
+        );
       }).toList(),
     );
   }

@@ -82,6 +82,11 @@ class _PlaylistButtons extends StatelessWidget {
         ),
         IconButton(
           onPressed: () {}, 
+          icon: const Icon(Icons.arrow_circle_down_rounded),
+          iconSize: 35.0,
+        ),
+        IconButton(
+          onPressed: () {}, 
           icon: const Icon(Icons.more_horiz),
           iconSize: 30.0,
         ),
