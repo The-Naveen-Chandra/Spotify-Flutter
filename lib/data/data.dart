@@ -154,7 +154,7 @@ const lofihiphopPlaylist = Playlist(
   description:
       'A daily selection of chill beats - perfect to help you relax & study 📚',
   creator: 'Lofi Girl',
-  duration: '28 min',
+  duration: '7 hr',
   followers: '5,351,685',
   songs: _lofihiphopMusic,
 );
