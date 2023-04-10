@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:spotify_ui/data/data.dart';
 import 'package:spotify_ui/models/current_track_model.dart';
 import 'package:spotify_ui/screens/playlist_screen.dart';
+import 'package:spotify_ui/widgets/current_track.dart';
 import 'package:spotify_ui/widgets/widgets.dart';
 
 void main() async{
@@ -94,11 +95,7 @@ class Shell extends StatelessWidget {
           ),
 
           //  bottom playlist
-          Container(
-            height: 84.0,
-            width: double.infinity,
-            color: Color(0xFF181818),
-          ),
+          CurrentTrack(),
         ],
       ),
     );
